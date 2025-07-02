@@ -1,17 +1,20 @@
+<!-- filepath: resources/views/users/show.blade.php -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>User Details</title>
 </head>
 <body>
-    
-    <h1>Hello {{$user->name}}</h1>
-    Nom: {{ $user->name }}<br>
-    Email: {{ $user->email }}<br>
-
-    <a href="{{ route('index') }}">Back to User List</a>
+    <h1>User Details</h1>
+    <p><strong>Name:</strong> {{ $user->name }}</p>
+    <p><strong>Email:</strong> {{ $user->email }}</p>
+    <p><strong>Foto:</strong><br>
+        @if($user->photo)
+            <img src="{{ asset('storage/' . $user->photo) }}" width="120" alt="User Photo">
+        @else
+            Kein Foto
+        @endif
+    </p>
+    <a href="{{ route('index') }}">Zurück zur User-Liste</a>
 </body>
 </html>

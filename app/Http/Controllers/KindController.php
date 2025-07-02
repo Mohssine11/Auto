@@ -18,9 +18,14 @@ class KindController extends Controller{
         'name' => 'required|string|max:255',
         'email' => 'required|string|email|max:255|unique:users',
         'password' => 'required|string',
+        'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // <--- hinzufügen
     ]);
 
     $data['password'] = Hash::make($data['password']);
+
+    if ($request->hasFile('photo')) {
+        $data['photo'] = $request->file('photo')->store('photos', 'public');
+    }
 
     User::create($data);
 
