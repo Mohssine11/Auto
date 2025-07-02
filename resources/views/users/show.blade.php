@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    
+    <h1>Hello {{$user->name}}</h1>
+    Nom: {{ $user->name }}<br>
+    Email: {{ $user->email }}<br>
+
+    <a href="{{ route('index') }}">Back to User List</a>
 </body>
 </html>
