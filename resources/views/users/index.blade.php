@@ -23,7 +23,7 @@
                 <td>{{ $user->email }}</td>
                 <td>
                     @if($user->photo)
-                        <img src="{{ asset('storage/' . $user->photo) }}" width="60" alt="User Photo">
+                        <img src="{{ asset('storage/' . $user->photo) }}" width="65" alt="User Photo" style="border-radius: 50%;background-size: cover">
                     @else
                         Kein Foto
                     @endif
