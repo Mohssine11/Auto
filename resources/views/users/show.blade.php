@@ -8,13 +8,13 @@
     <h1>User Details</h1>
     <p><strong>Name:</strong> {{ $user->name }}</p>
     <p><strong>Email:</strong> {{ $user->email }}</p>
-    <p><strong>Foto:</strong><br>
+    <p><strong>Photo:</strong><br>
         @if($user->photo)
             <img src="{{ asset('storage/' . $user->photo) }}" width="120" alt="User Photo">
         @else
             Kein Foto
         @endif
     </p>
-    <a href="{{ route('index') }}">Zurück zur User-Liste</a>
+    <a href="{{ route('index') }}">back to home</a>
 </body>
 </html>
