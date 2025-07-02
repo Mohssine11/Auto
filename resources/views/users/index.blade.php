@@ -7,7 +7,7 @@
 <body>
     <h1>User Liste</h1>
     <a href="{{ route('create') }}">add neu user</a>
-    <table border="1" cellpadding="5">
+    <table border="1" cellpadding="5" style="margin: 10px auto">
         <thead>
             <tr>
                 <th>Name</th>
